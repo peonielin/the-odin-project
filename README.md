@@ -13,13 +13,3 @@ block-and-inline: to understand block & inline items
 flex: flexbox exercises
 
 landing-page:landing page project
-
-more commits
-
-more commits 2
-
-3
-
-4
-
-5
