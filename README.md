@@ -14,4 +14,3 @@ flex: flexbox exercises
 
 landing-page:landing page projec
 
-commit 6
