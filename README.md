@@ -14,5 +14,4 @@ flex: flexbox exercises
 
 landing-page:landing page project
 
-extra commit number 1.
 
