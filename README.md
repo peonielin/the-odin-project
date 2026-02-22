@@ -13,4 +13,3 @@ block-and-inline: to understand block & inline items
 flex: flexbox exercises
 
 landing-page:landing page project
-
