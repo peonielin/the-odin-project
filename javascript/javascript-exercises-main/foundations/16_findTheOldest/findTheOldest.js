@@ -1,24 +1,17 @@
-const findTheOldest = function(people) {
+const findTheOldest = function (people) {
+  //find map all ages
+  let oldest = [];
 
-    const myFunction = (arr) => {
-    let highestAge = 0;
+  people.forEach((person) => {
+    if (person.yearOfDeath == null) {
+      person.yearOfDeath = getFullYear();
+    }
 
-    arr
-        .map(e => e.age)
-        .forEach(age => {
-            if (age > highestAge) {
-                highestAge = age;
-            }
-        );
-
-    return highestAge;
-}
-
-const highestAge = myFunction(people);
-
-
+    const ages = people.map(
+      (person) => person.yearOfDeath - person.yearOfBirth,
+    );
+  });
 };
-
 
 // Do not edit below this line
 module.exports = findTheOldest;
