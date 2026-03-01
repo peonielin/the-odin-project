@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My shopping list</h1>
+
+    <form>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item" />
+      <button>Add item</button>
+    </form>
+
+    <ul></ul>
+
+    <script>
+      const list = document.querySelector("ul");
+      const button = document.querySelector("button");
+      const input = document.querySelector("input");
+
+      function onClick(event) {
+        event.preventDefault();
+        const inputText = input.value;
+        input.value = "";
+
+        const listItem = document.createElement("li");
+        const span = document.createElement("span");
+        const newButton = document.createElement("button");
+        span.textContent = inputText;
+        listItem.appendChild(span);
+        newButton.textContent = "Delete";
+        listItem.appendChild(newButton);
+        list.appendChild(listItem);
+        input.focus();
+        newButton.addEventListener("click", removeItem);
+      }
+
+      function removeItem(event) {
+        let item = event.currentTarget.parentNode;
+        let userInput = item.dataset.value; // extracting the data attribute
+        item.remove();
+        let itemIndex = items.indexOf(userInput);
+        items.splice(itemIndex, 1);
+      }
+
+      button.addEventListener("click", onClick);
+    </script>
+  </body>
+</html>
