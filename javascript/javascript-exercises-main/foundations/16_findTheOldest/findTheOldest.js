@@ -1,15 +1,15 @@
+const findUserAge = function findAge(birth, death) {
+  if (!death) {
+    death = new Date().getFullYear();
+  }
+  return death - birth;
+};
+
 const findTheOldest = function (people) {
-  //find map all ages
-  let oldest = [];
-
-  people.forEach((person) => {
-    if (person.yearOfDeath == null) {
-      person.yearOfDeath = getFullYear();
-    }
-
-    const ages = people.map(
-      (person) => person.yearOfDeath - person.yearOfBirth,
-    );
+  return people.reduce((oldest, current) => {
+    const oldestPerson = findUserAge(oldest.yearOfBirth, oldest.yearOfDeath);
+    const currentPerson = findUserAge(current.yearOfBirth, current.yearOfDeath);
+    return oldestPerson < currentPerson ? current : oldest;
   });
 };
 
